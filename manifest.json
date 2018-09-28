@@ -1,0 +1,29 @@
+{
+    "files": {
+        "index.js": "d276996a0f9b381553f181474f9d9a4ace4a6100f35e36258e64712382dc98d1",
+        "module.json": "86f3e965c17c519a810545e5e90c8c1f786415803c10fbc8b4d06c0b63d695c4",
+        "lib/me.js": "e8826f4c635a7918619e608300a8d070486de7fe24e5cb0455f07b2b4a62d95a",
+        "lib/contract.js": "62728397c773df7a8ad7008f4250640d941e22e1e8e38a63ae9b482c64135492",
+        "lib/data.js": "16a7876b11da461dc248d0bfd527bceaa382f7735ea6ad2d2a47e378dbfedd50",
+        "lib/res/userdata.json": "0dda60f31a59f03c078e577272c4894e3740b2c93bb85f05a85e3f7efe0829ba"
+    },
+    "defs": {
+        "S_GET_USER_LIST": "raw",
+        "S_RETURN_TO_LOBBY": "raw",
+        "S_LOGIN": ["raw", 10],
+        "S_LOAD_TOPO": ["raw", 3],
+        "S_SPAWN_ME": ["raw", 3],
+        "S_CREATURE_LIFE": 2,
+        "S_MOUNT_VEHICLE": 2,
+        "S_UNMOUNT_VEHICLE": 2,
+        "S_EXIT": "raw",
+        "S_USER_CHANGE_NAME": 1,
+        "S_USER_LEVELUP": 2,
+        "S_USER_STATUS": 2,
+        "S_REQUEST_CONTRACT": 1,
+        "S_ACCEPT_CONTRACT": "raw",
+        "S_REJECT_CONTRACT": "raw",
+        "S_CANCEL_CONTRACT": "raw",
+        "S_BATTLE_FIELD_ENTRANCE_INFO": 1
+    }
+}
