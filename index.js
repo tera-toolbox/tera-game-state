@@ -109,19 +109,14 @@ class TeraGameState extends EventEmitter
     get isIngame() { return this.state === GameStates.INGAME; }
 }
 
-
-// TODO FIXME: remove this ugly-ass shit code once mods are ported to new require() stuff.
-if(!global.__TeraGameStateInstanceMap__)
-    global.__TeraGameStateInstanceMap__ = new WeakMap();
-
 module.exports = function TeraGameStateLoader(mod) {
-    if(mod.name !== 'tera-game-state')
-        console.log(`WARNING FOR DEVELOPERS: In ${mod.name} - require()'ing tera-game-state is deprecated, use mod.game instead!`);
-
-	if(global.__TeraGameStateInstanceMap__.has(mod.dispatch))
-        return global.__TeraGameStateInstanceMap__.get(mod.dispatch)
-
-	const instance = new TeraGameState(mod)
-	global.__TeraGameStateInstanceMap__.set(mod.dispatch, instance)
-	return instance
+    if(mod.name !== 'tera-game-state') {
+        if(mod.name)
+            console.log(`ERROR: Module ${mod.name} is trying to require() tera-game-state. Please uninstall it!`);
+        else
+            console.log(`ERROR: An unknown module is trying to require() tera-game-state. Please uninstall it!`);
+        process.exit(1);
+    }
+    
+	return new TeraGameState(mod);
 }
