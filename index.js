@@ -56,7 +56,8 @@ class TeraGameState extends EventEmitter
                 }
                 catch(e)
                 {
-                    console.log(`[TeraGameState] Unable to load submodule ${submodule}: ${e}`);
+                    mod.error(`Unable to load submodule ${submodule}:`);
+                    mod.error(e);
                 }
             }
         }
@@ -109,14 +110,4 @@ class TeraGameState extends EventEmitter
     get isIngame() { return this.state === GameStates.INGAME; }
 }
 
-module.exports = function TeraGameStateLoader(mod) {
-    if(mod.name !== 'tera-game-state') {
-        if(mod.name)
-            console.log(`ERROR: Module ${mod.name} is trying to require() tera-game-state. Please uninstall it!`);
-        else
-            console.log(`ERROR: An unknown module is trying to require() tera-game-state. Please uninstall it!`);
-        process.exit(1);
-    }
-    
-	return new TeraGameState(mod);
-}
+module.exports = TeraGameState;
