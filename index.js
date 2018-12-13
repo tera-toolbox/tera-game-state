@@ -56,8 +56,8 @@ class TeraGameState extends EventEmitter
                 }
                 catch(e)
                 {
-                    mod.error(`Unable to load submodule ${submodule}:`);
-                    mod.error(e);
+                    this.mod.error(`Unable to load submodule ${submodule}:`);
+                    this.mod.error(e);
                 }
             }
         }
