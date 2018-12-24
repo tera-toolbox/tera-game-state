@@ -13,7 +13,7 @@ class TeraGameState extends EventEmitter
         super();
         this.setMaxListeners(0);
 
-        if(mod.proxyAuthor !== 'caali')
+        if(mod.proxyAuthor !== 'caali' || !global.TeraProxy)
             mod.warn('You are trying to use tera-game-state on an unsupported version of tera-proxy. It may not work as expected, and even if it does now it may break at any point in the future!');
 
         this.mod = mod;
