@@ -2,7 +2,7 @@
     "files": {
         "index.js": "3f58f05d23f2990106be894e5f9297cd9b035c110ecfa6a696979db4510739c9",
         "module.json": "4aea5ad0932c6972601af7941f10b1018dc2a233a92680f08434f2ae690bdbf3",
-        "lib/me.js": "562f8565199a9d44d4d777c293ee9f94f2b1bb00a964285ecf4dfd99a6f0781a",
+        "lib/me.js": "07344419499cf1a3edbdcd99992c113b7d9a474c5d4841012ab95d2f4d9fd20c",
         "lib/contract.js": "62728397c773df7a8ad7008f4250640d941e22e1e8e38a63ae9b482c64135492",
         "lib/data.js": "16a7876b11da461dc248d0bfd527bceaa382f7735ea6ad2d2a47e378dbfedd50",
         "lib/res/userdata.json": "0dda60f31a59f03c078e577272c4894e3740b2c93bb85f05a85e3f7efe0829ba"
@@ -10,7 +10,7 @@
     "defs": {
         "S_GET_USER_LIST": "raw",
         "S_RETURN_TO_LOBBY": "raw",
-        "S_LOGIN": ["raw", 11, 12],
+        "S_LOGIN": ["raw", 12],
         "S_LOAD_TOPO": ["raw", 3],
         "S_SPAWN_ME": ["raw", 3],
         "S_CREATURE_LIFE": 2,
