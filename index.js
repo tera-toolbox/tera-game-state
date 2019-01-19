@@ -22,7 +22,6 @@ class TeraGameState extends EventEmitter
         this.language = null;
         this.accountId = null;
         this.accountName = null;
-        this.serverId = null;
         this.loadedSubmodules = {};
 
         // Make sure to load game data first
@@ -83,7 +82,6 @@ class TeraGameState extends EventEmitter
         });
         this.installHook('S_LOGIN_ACCOUNT_INFO', 2, event => {
             this.accountId = event.accountId;
-            this.serverId = parseInt(event.serverName.split('_')[1]);
         });
 
         this.installHook('S_GET_USER_LIST', 'raw', () => { this.setState(GameStates.CHARACTER_LOBBY); });
@@ -124,6 +122,7 @@ class TeraGameState extends EventEmitter
     }
 
     get isIngame() { return this.state === GameStates.INGAME; }
+    get serverId() { return this.mod.dispatch.connection.info.serverId; }
 }
 
 module.exports = TeraGameState;
