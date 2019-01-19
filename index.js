@@ -19,6 +19,10 @@ class TeraGameState extends EventEmitter
         this.mod = mod;
         this.state = GameStates.INVALID;
         this.isInLoadingScreen = false;
+        this.language = null;
+        this.accountId = null;
+        this.accountName = null;
+        this.serverId = null;
         this.loadedSubmodules = {};
 
         // Make sure to load game data first
@@ -73,12 +77,21 @@ class TeraGameState extends EventEmitter
 
     installHooks()
     {
-        this.installHook('S_GET_USER_LIST', 'raw', (event) => { this.setState(GameStates.CHARACTER_LOBBY); });
-        this.installHook('S_RETURN_TO_LOBBY', 'raw', (event) => { this.setState(GameStates.CHARACTER_LOBBY); });
-        this.installHook('S_LOGIN', 'raw', (event) => { this.setLoadingScreen(true); this.setState(GameStates.INGAME); });
-        this.installHook('S_LOAD_TOPO', 'raw', (event) => { this.setLoadingScreen(true); });
-        this.installHook('S_SPAWN_ME', 'raw', (event) => { this.setLoadingScreen(false); });
-        this.installHook('S_EXIT', 'raw', (event) => { this.setState(GameStates.INVALID); });
+        this.installHook('C_LOGIN_ARBITER', 2, event => {
+            this.language = event.language;
+            this.accountName = event.name;
+        });
+        this.installHook('S_LOGIN_ACCOUNT_INFO', 2, event => {
+            this.accountId = event.accountId;
+            this.serverId = parseInt(event.serverName.split('_')[1]);
+        });
+
+        this.installHook('S_GET_USER_LIST', 'raw', () => { this.setState(GameStates.CHARACTER_LOBBY); });
+        this.installHook('S_RETURN_TO_LOBBY', 'raw', () => { this.setState(GameStates.CHARACTER_LOBBY); });
+        this.installHook('S_LOGIN', 'raw', () => { this.setLoadingScreen(true); this.setState(GameStates.INGAME); });
+        this.installHook('S_LOAD_TOPO', 'raw', () => { this.setLoadingScreen(true); });
+        this.installHook('S_SPAWN_ME', 'raw', () => { this.setLoadingScreen(false); });
+        this.installHook('S_EXIT', 'raw', () => { this.setState(GameStates.INVALID); });
     }
 
     setState(state)
