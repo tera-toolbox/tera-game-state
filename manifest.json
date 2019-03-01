@@ -1,10 +1,11 @@
 {
     "files": {
-        "index.js": "c9ee1177cd74d81015bf57ae48fc26e41d1be820c2cbd6b29ad26c67771b35c6",
+        "index.js": "da102c080f7d39a51fbb9828476c3418458d6140af1de47c2a44aff48e9b6859",
         "module.json": "4aea5ad0932c6972601af7941f10b1018dc2a233a92680f08434f2ae690bdbf3",
         "lib/me.js": "07344419499cf1a3edbdcd99992c113b7d9a474c5d4841012ab95d2f4d9fd20c",
         "lib/contract.js": "62728397c773df7a8ad7008f4250640d941e22e1e8e38a63ae9b482c64135492",
         "lib/data.js": "16a7876b11da461dc248d0bfd527bceaa382f7735ea6ad2d2a47e378dbfedd50",
+        "lib/inventory.js": "6dc9b0028ff9aa7b15a49b589aefde8835b632edffac3974a4288fcc3f65a8d8",
         "lib/res/userdata.json": "0dda60f31a59f03c078e577272c4894e3740b2c93bb85f05a85e3f7efe0829ba"
     },
     "defs": {
@@ -26,6 +27,7 @@
         "S_ACCEPT_CONTRACT": "raw",
         "S_REJECT_CONTRACT": "raw",
         "S_CANCEL_CONTRACT": "raw",
-        "S_BATTLE_FIELD_ENTRANCE_INFO": 1
+        "S_BATTLE_FIELD_ENTRANCE_INFO": 1,
+        "S_INVEN": [17, 18]
     }
 }

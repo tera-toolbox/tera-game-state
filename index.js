@@ -125,7 +125,7 @@ class TeraGameState extends EventEmitter
     }
 
     get isIngame() { return this.state === GameStates.INGAME; }
-    get serverId() { return this.mod.dispatch.connection.info.serverId; }
+    get serverId() { return this.mod.serverId; }
 }
 
 module.exports = TeraGameState;

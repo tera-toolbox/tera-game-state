@@ -4,6 +4,7 @@ Game state tracking library for tera-proxy
 # Documentation
 - Submodule `me`: [here](doc/me.md)
 - Submodule `contract`: [here](doc/contract.md)
+- Submodule `inventory`: [here](doc/inventory.md)
 
 # Requesting submodules
 To reduce overhead, most submodules need to be explicitly requested by a module using them (during initialization, recommended in the module's constructor):
@@ -23,10 +24,12 @@ module.exports = function GameStateExample(mod) {
 ```js
 module.exports = function GameStateExample(mod) {
     // An instance of tera-game-state (as well as command) is readily available through mod.game!
+    // We're using the "inventory" submodule later on, which needs to be explicitly enabled in order to avoid overhead if unused (see above)
+    mod.game.initialize('inventory');
     
     // You can register event handlers (higher-level abstraction than just listening to packets)
     mod.game.on('enter_game', () => {
-        console.log(`You are now ingame on a ${mod.game.me.race} ${mod.game.me.gender} ${mod.game.me.class}!`);
+        mod.log(`You are now ingame on a ${mod.game.me.race} ${mod.game.me.gender} ${mod.game.me.class}!`);
         
         // Special action required for human male brawler (names are taken directly from DC to avoid confusion)
         if(mod.game.me.race === 'human' && mod.game.me.gender === 'male' && mod.game.me.class === 'fighter')
@@ -47,7 +50,9 @@ module.exports = function GameStateExample(mod) {
     mod.hook('S_ABNORMALITY_BEGIN', 2, (event) => {        
         if(mod.game.me.is(event.target))
         {
-            console.log('An abnormality was applied to the player!');
+            mod.log('An abnormality was applied to our player!');
+            if(mod.game.inventory.weaponEquipped && mod.game.inventory.getTotalAmountInBag(6550) >= 10)
+                mod.log(`... and we have a weapon equipped, at least 10x Minor Recovery Potables in the bag, and ${mod.game.inventory.money / 10000n} gold!`);
         }
     });
 }
