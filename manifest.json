@@ -28,6 +28,6 @@
         "S_REJECT_CONTRACT": "raw",
         "S_CANCEL_CONTRACT": "raw",
         "S_BATTLE_FIELD_ENTRANCE_INFO": 1,
-        "S_INVEN": [17, 18]
+        "S_INVEN": 18
     }
 }
