@@ -1,5 +1,5 @@
 # tera-game-state
-Game state tracking library for tera-proxy
+TERA Toolbox core module that implements a game state tracking library for network mods.
 
 # Documentation
 - Submodule `me`: [here](doc/me.md)
