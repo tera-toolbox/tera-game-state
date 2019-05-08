@@ -13,12 +13,6 @@ class TeraGameState extends EventEmitter
         super();
         this.setMaxListeners(0);
 
-        if(mod.proxyAuthor !== 'caali' || !global.TeraProxy) {
-            mod.warn('You are trying to use tera-game-state on an unsupported legacy version of tera-proxy.');
-            mod.warn('The module may not work as expected, and even if it works for now, it may break at any point in the future!');
-            mod.warn('It is highly recommended that you download the latest official version from the #proxy channel in https://discord.gg/dUNDDtw');
-        }
-
         this.mod = mod;
         this.state = GameStates.INVALID;
         this.isInLoadingScreen = false;
