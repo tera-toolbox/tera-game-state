@@ -1,12 +1,10 @@
 {
     "files": {
-        "index.js": "9a6c42a5d32747104744ffa7c4709163a31b23f537ece74b79886b93efbae562",
-        "module.json": "66d433d3926615e39473966fa5f24b4aa65137808807cf9eeb97baaab7f6c5c9",
-        "lib/me.js": "ce96e6bee322f34ef0f6af3e0937c851effc0f1d9122f494f5acccd800e2c2fe",
-        "lib/contract.js": "62728397c773df7a8ad7008f4250640d941e22e1e8e38a63ae9b482c64135492",
-        "lib/data.js": "16a7876b11da461dc248d0bfd527bceaa382f7735ea6ad2d2a47e378dbfedd50",
-        "lib/inventory.js": "0593bef325d41913c0f9e9dd0f4953afac2f7a97f78f4e84f365e2cd7f2764b8",
-        "lib/res/userdata.json": "0dda60f31a59f03c078e577272c4894e3740b2c93bb85f05a85e3f7efe0829ba"
+        "index.js": "2c0078debed21646d100b23985408a15a5132ed50e6cebcb0557e9f9c0bf1ce0",
+        "module.json": "6f969d093fa5e024757824bd2814073378be4ebfdf41dfdfbd50db34f285fcc1",
+        "lib/me.js": "4f3848176f7ebbdd16e2e261088c1c23e59518b8a9e73b689770ad735875f6e0",
+        "lib/contract.js": "d76fb9cf25644e9aca0d2484ad3f9687715fb8810269eaa52f59236b8c1e12ed",
+        "lib/inventory.js": "8e7deccbd2a35a6d05c47cef419eded927e7f2a7de115c08431eca2ee740c1c9"
     },
     "defs": {
         "C_LOGIN_ARBITER": 2,
@@ -27,7 +25,6 @@
         "S_ACCEPT_CONTRACT": "raw",
         "S_REJECT_CONTRACT": "raw",
         "S_CANCEL_CONTRACT": "raw",
-        "S_BATTLE_FIELD_ENTRANCE_INFO": 1,
         "S_INVEN": 18
     }
 }

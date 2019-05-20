@@ -3,13 +3,11 @@ const EventEmitter = require('events');
 const GameStates = {
     INVALID: 0,
     CHARACTER_LOBBY: 1,
-    INGAME: 2,
+    INGAME: 2
 }
 
-class TeraGameState extends EventEmitter
-{
-    constructor(mod)
-    {
+class TeraGameState extends EventEmitter {
+    constructor(mod) {
         super();
         this.setMaxListeners(0);
 
@@ -22,57 +20,60 @@ class TeraGameState extends EventEmitter
         this.loadedSubmodules = {};
 
         // Make sure to load game data first
-        this.initialize("data");
+        this.data = mod.require['tera-game-state-helper'];
 
         // Now initialize default submodules
         this.installHooks();
-        this.initialize("me");
+        this.initialize('me');
     }
 
-    destructor()
-    {
+    destructor() {
         this.setState(GameStates.INVALID);
 
-        for(let submodule in this.loadedSubmodules) {
+        for (let submodule in this.loadedSubmodules) {
             this.loadedSubmodules[submodule].destructor();
             delete this[submodule];
         }
 
         this.loadedSubmodules = undefined;
+        this.data = undefined;
         this.mod = undefined;
     }
 
-    initialize(submodules)
-    {
-        if(typeof submodules === 'string')
+    initialize(submodules) {
+        if (typeof submodules === 'string')
             submodules = [submodules];
 
-        for(let submodule of submodules)
-        {
-            if(!this.loadedSubmodules[submodule])
-            {
-                try
-                {
-                    let req = require(`./lib/${submodule}`);
-                    this.loadedSubmodules[submodule] = new req(this);
-                    this[submodule] = this.loadedSubmodules[submodule];
+        for (const submodule of submodules) {
+            const [name, feature] = submodule.split('.');
+            if (!this.loadedSubmodules[name]) {
+                try {
+                    let req = require(`./lib/${name}`);
+                    this.loadedSubmodules[name] = new req(this);
+                    this[name] = this.loadedSubmodules[name];
                 }
-                catch(e)
-                {
-                    this.mod.error(`Unable to load submodule ${submodule}:`);
+                catch (e) {
+                    this.mod.error(`Unable to load submodule ${name}:`);
+                    this.mod.error(e);
+                }
+            }
+
+            if (feature && this.loadedSubmodules[name]) {
+                try {
+                    this.loadedSubmodules[name].initialize(feature);
+                } catch (e) {
+                    this.mod.error(`Unable to initialize submodule feature ${name}.${feature}:`);
                     this.mod.error(e);
                 }
             }
         }
     }
 
-    installHook(name, version, cb)
-    {
-        this.mod.hook(name, version, {order: -9999, filter: {fake: null, modified: null, silenced: null}}, cb);
+    installHook(name, version, cb) {
+        this.mod.hook(name, version, { order: -9999, filter: { fake: null, modified: null, silenced: null } }, cb);
     }
 
-    installHooks()
-    {
+    installHooks() {
         this.installHook('C_LOGIN_ARBITER', 2, event => {
             this.language = event.language;
             this.accountName = event.name;
@@ -89,30 +90,24 @@ class TeraGameState extends EventEmitter
         this.installHook('S_EXIT', 'raw', () => { this.setState(GameStates.INVALID); });
     }
 
-    setState(state)
-    {
-        if(this.state !== state)
-        {
-            switch(this.state)
-            {
+    setState(state) {
+        if (this.state !== state) {
+            switch (this.state) {
                 case GameStates.CHARACTER_LOBBY: this.emit('leave_character_lobby'); break;
                 case GameStates.INGAME: this.emit('leave_game'); break;
             }
 
             this.state = state;
 
-            switch(this.state)
-            {
+            switch (this.state) {
                 case GameStates.CHARACTER_LOBBY: this.emit('enter_character_lobby'); break;
                 case GameStates.INGAME: this.emit('enter_game'); break;
             }
         }
     }
 
-    setLoadingScreen(isInLoadingScreen)
-    {
-        if(this.isInLoadingScreen !== isInLoadingScreen)
-        {
+    setLoadingScreen(isInLoadingScreen) {
+        if (this.isInLoadingScreen !== isInLoadingScreen) {
             this.isInLoadingScreen = isInLoadingScreen;
             this.emit(isInLoadingScreen ? 'enter_loading_screen' : 'leave_loading_screen');
         }

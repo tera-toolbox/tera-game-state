@@ -10,7 +10,15 @@ TERA Toolbox core module that implements a game state tracking library for netwo
 To reduce overhead, most submodules need to be explicitly requested by a module using them (during initialization, recommended in the module's constructor):
 ```js
 module.exports = function GameStateExample(mod) {
+    // This:
     mod.game.initialize(["me", "contract"]);
+    // Is identical to this:
+    mod.game.initialize("me");
+    mod.game.initialize("contract");
+
+    // Note that some submodules have even finer grained features that need to be activated individually (in order to reduce overhead when unused).
+    // Activating a feature (here: "abnormalities" feature of "me" submodule) will implicitly also activate the corresponding submodule (here: "me").
+    mod.game.initialize("me.abnormalities");
     
     // Submodules "me" and "contract" can now be used.
     // Note that "me" does not need to be explicitly requested; it is always loaded by default!

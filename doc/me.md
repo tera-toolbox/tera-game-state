@@ -82,3 +82,24 @@ Each of the following attributes can be accessed through, for example, `mod.game
 - Emitted when the player finishes a pegasus ride
 - Exemplary usage: `mod.game.me.on('finish_pegasus', () => { ... })`
 - Parameters: none
+
+# Feature `"abnormalities"`
+Tracks currently active abnormalities on the player. Must be activated through `mod.game.initialize("me.abnormalities")`.
+
+Adds the `abnormalities` attribute which is an object with abnormality IDs as keys and objects with the following properties as values:
+- `id`: The abnormality's ID.
+- `stacks`: Number of stacks.
+- `until`: Timestamp of expiry (milliseconds; computed through `Date.now() + duration`).
+- `remaining`: Milliseconds remaining until expiry.
+- `data`: Link to the [corresponding game data queried from the DataCenter file](data.md#abnormalities)
+
+Exemplary usage:
+```js
+// Logs info about all currently active abnormalities
+Object.values(mod.game.me.abnormalities).forEach(abnormality => {
+    mod.log(`${abnormality.data.name} (ID: ${abnormality.id})`)
+    abnormality.data.effects.forEach(effect => {
+        mod.log(`  - Type ${effect.type}, Method ${effect.method}, Value ${effect.value}`);
+    });
+});
+```

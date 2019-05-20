@@ -70,3 +70,16 @@ Each of the following attributes can be accessed through, for example, `mod.game
 
 # Events
 None (TBD).
+
+# Exemplary Usage
+```js
+// Log info about all items in equipment and bag
+mod.log('--- Equipment ---')
+mod.game.inventory.equipment.forEach(item => {
+    mod.log(`Slot ${item.slot}: ${item.data.name} x${item.amount} (ID: ${item.id})`);
+});
+mod.log('--- Bag ---')
+mod.game.inventory.bag.forEach(item => {
+    mod.log(`Slot ${item.slot}: ${item.data.name} x${item.amount} (ID: ${item.id})`);
+});
+```
