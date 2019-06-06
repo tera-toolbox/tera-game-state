@@ -1,5 +1,5 @@
 # tera-game-state
-TERA Toolbox core module that implements a game state tracking library for network mods.
+[TERA Toolbox](https://github.com/tera-toolbox/tera-toolbox) core module that implements a game state tracking library for network mods.
 
 # Documentation
 - Submodule `me`: [here](doc/me.md)
