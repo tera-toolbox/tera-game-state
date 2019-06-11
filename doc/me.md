@@ -25,7 +25,10 @@ Each of the following attributes can be accessed through, for example, `mod.game
 - `status`: The player's current status. See `S_USER_STATUS` def for values.
 - `inCombat`: Indicates whether the player is in combat.
 - `onPegasus`: Indicates whether the player is on a pegasus ride.
+- `inOpenWorld`: Indicates whether the player is currently in the open world.
 - `inBattleground`: Indicates whether the player is currently in a battleground.
+- `inDungeon`: Indicates whether the player is currently in a dungeon.
+- `inCivilUnrest`: Indicates whether the player is currently in CU.
 
 # Events
 ## change_zone
