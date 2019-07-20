@@ -1,21 +1,9 @@
 # inventory
-Submodule representing the player's inventory (equipment and bag). Accessible through `mod.game.inventory`.
+Submodule representing the player's inventory (equipment, bag, and pockets). Accessible through `mod.game.inventory`.
 
 **You need to specifically request this submodule during your module's initialization by calling `mod.game.initialize`!**
 
 # Functions
-## isSlot
-- Checks if a slot is valid for either equipment or bag. Returns false if the slot is invalid (0 or out of bounds), and true if it's valid.
-- Exemplary usage: `mod.game.inventory.isSlot(event.slot)`
-
-## isEquipmentSlot
-- Checks if a slot is a valid equipment slot. Returns false if the slot is invalid (0, out of bounds, or in bag), and true if it's valid.
-- Exemplary usage: `mod.game.inventory.isEquipmentSlot(event.slot)`
-
-## isBagSlot
-- Checks if a slot is a valid bag slot. Returns false if the slot is invalid (0, out of bounds, or in equipment), and true if it's valid.
-- Exemplary usage: `mod.game.inventory.isBagSlot(event.slot)`
-
 ## getTotalAmount
 - Returns the total amount of items with the given ID (or array of IDs) in both equipment and bag combined.
 - Exemplary usage: `mod.game.inventory.getTotalAmount(CONSUMABLE_ID)`
@@ -54,32 +42,37 @@ Submodule representing the player's inventory (equipment and bag). Accessible th
 
 # Attributes
 Each of the following attributes can be accessed through, for example, `mod.game.inventory.money`.
-- `slots`: Slot Number -> Item object
-- `dbids`: DatabaseID -> Item object
+- `dbids`: DatabaseID -> Item object containing all items (equipment, bag, pockets)
 - `items`: array containing all items in equipment and bag combined
-- `equipment`: array containing all equipped items
-- `bag`: array containing all items in bag
-- `bagSize`: Total number of slots in bag
+- `pocketCount`: total number of unlocked pockets + 1 (as the bag is regarded to as pocket 0)
+- `pockets`: array (index 0 = bag; index 1 = first pocket; etc.) of objects with `size` (number of slots), `lootPriority` (see `S_ITEMLIST` definition) and `slots` (slot number -> item object; contains only used slots)
+- `equipment`: object with `size` (number of slots) and `slots` (slot number -> item object; contains only used slots)
+- `equipmentItems`: array containing all equipped items
+- `bag`: redirects to `pockets[0]`
+- `bagItems`: array containing all items in bag
 - `equipmentItemLevel`: Currently equipped item level
 - `totalItemLevel`: Maximum possible item level across all items in equipment and bag
 - `money`: Total money
-- `tcat`: Total TCat (used in KR only)
+- `tcat`: Total TCat
 - `equipmentPassivities`: array containing all passivity IDs of the currently active passivity sets of all equipped items (e.g. weapon rolls). Duplicates possible.
 - `equipmentCrystals`: array containing all item IDs of the crystals in all equipped items. Duplicates possible.
 - `weaponEquipped`: Indicates whether or not a weapon is equipped
 
 # Events
-None (TBD).
+## update
+- Emitted whenever a full batch of update packets has been received, stitched together, and parsed.
+- Exemplary usage: `mod.game.inventory.on('update', () => { ... })`
+- Parameters: none
 
 # Exemplary Usage
 ```js
 // Log info about all items in equipment and bag
 mod.log('--- Equipment ---')
-mod.game.inventory.equipment.forEach(item => {
+mod.game.inventory.equipmentItems.forEach(item => {
     mod.log(`Slot ${item.slot}: ${item.data.name} x${item.amount} (ID: ${item.id})`);
 });
 mod.log('--- Bag ---')
-mod.game.inventory.bag.forEach(item => {
+mod.game.inventory.bagItems.forEach(item => {
     mod.log(`Slot ${item.slot}: ${item.data.name} x${item.amount} (ID: ${item.id})`);
 });
 ```
