@@ -32,9 +32,10 @@ Each of the following attributes can be accessed through, for example, `mod.game
 
 # Events
 ## change_zone
-- Emitted on `S_LOAD_TOPO`
+- Emitted if the current zone changes on `S_LOAD_TOPO`
 - Exemplary usage: `mod.game.me.on('change_zone', (zone, quick) => { ... })`
 - Parameters: `zone` is the new zone to load, `quick` indicates if a loading screen is shown (false) or not (true)
+- **Note:** Does *not* trigger when changing channels or teleporting within the same zone!
 
 ## die
 - Emitted on the player's death

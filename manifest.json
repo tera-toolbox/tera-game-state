@@ -4,7 +4,7 @@
         "module.json": "6f969d093fa5e024757824bd2814073378be4ebfdf41dfdfbd50db34f285fcc1",
         "lib/me.js": "82eb096077c0d4463639dd1c195c97d275f3443181c32e2f69e6291adb47d6a2",
         "lib/contract.js": "d76fb9cf25644e9aca0d2484ad3f9687715fb8810269eaa52f59236b8c1e12ed",
-        "lib/inventory.js": "721b487ea72633cabde0bf3cc3ab1a062b9e5d61059236642b22de5090a94f9d"
+        "lib/inventory.js": "1ba5b919495324f44c43a7d3f06d4be426460ff416c8cff2d69bddccf47ca6e6"
     },
     "defs": {
         "C_LOGIN_ARBITER": 2,
@@ -25,6 +25,8 @@
         "S_ACCEPT_CONTRACT": "raw",
         "S_REJECT_CONTRACT": "raw",
         "S_CANCEL_CONTRACT": "raw",
-        "S_INVEN": 19
+        "S_INVEN": 19,
+        "S_INVEN_USERDATA": 1,
+        "S_ITEMLIST": 1
     }
 }
