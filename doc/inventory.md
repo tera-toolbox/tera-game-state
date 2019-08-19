@@ -4,6 +4,21 @@ Submodule representing the player's inventory (equipment, bag, and pockets). Acc
 **You need to specifically request this submodule during your module's initialization by calling `mod.game.initialize`!**
 
 # Functions
+## isInEquipment
+- Checks whether the given item is in the equipment.
+
+## isInBag
+- Checks whether the given item is in the bag.
+
+## isInPocket
+- Checks whether the given item is in the given pocket.
+
+## isInPockets
+- Checks whether the given item is in any pocket.
+
+## isInBagOrPockets
+- Checks whether the given item is in the bag or any pocket.
+
 ## getTotalAmount
 - Returns the total amount of items with the given ID (or array of IDs) in both equipment and bag combined.
 - Exemplary usage: `mod.game.inventory.getTotalAmount(CONSUMABLE_ID)`
@@ -15,6 +30,18 @@ Submodule representing the player's inventory (equipment, bag, and pockets). Acc
 ## getTotalAmountInBag
 - Returns the total amount of bag items with the given ID (or array of IDs).
 - Exemplary usage: `mod.game.inventory.getTotalAmountInBag(CONSUMABLE_ID)`
+
+## getTotalAmountInPocket
+- Returns the total amount of items with the given ID (or array of IDs) in the given pocket.
+- Exemplary usage: `mod.game.inventory.getTotalAmountInPocket(1, CONSUMABLE_ID)`
+
+## getTotalAmountInPockets
+- Returns the total amount of items with the given ID (or array of IDs) in all pockets combined.
+- Exemplary usage: `mod.game.inventory.getTotalAmountInPockets(CONSUMABLE_ID)`
+
+## getTotalAmountInBagOrPockets
+- Returns the total amount of items with the given ID (or array of IDs) in the bag and all pockets combined.
+- Exemplary usage: `mod.game.inventory.getTotalAmountInBagOrPockets(CONSUMABLE_ID)`
 
 ## find
 - Returns the first item with the given ID (or array of IDs) found in both equipment and bag combined.
@@ -28,6 +55,18 @@ Submodule representing the player's inventory (equipment, bag, and pockets). Acc
 - Returns the first bag item found with the given ID (or array of IDs).
 - Exemplary usage: `mod.game.inventory.findInBag(CONSUMABLE_ID)`
 
+## findInPocket
+- Returns the first item found with the given ID (or array of IDs) in the given pocket.
+- Exemplary usage: `mod.game.inventory.findInPocket(1, CONSUMABLE_ID)`
+
+## findInPockets
+- Returns the first item found with the given ID (or array of IDs) in any pocket.
+- Exemplary usage: `mod.game.inventory.findInPockets(CONSUMABLE_ID)`
+
+## findInBagOrPockets
+- Returns the first item found with the given ID (or array of IDs) in the bag or any pocket.
+- Exemplary usage: `mod.game.inventory.findInBagOrPockets(CONSUMABLE_ID)`
+
 ## findAll
 - Returns all items with the given ID (or array of IDs) in both equipment and bag combined.
 - Exemplary usage: `mod.game.inventory.findAll(CONSUMABLE_ID).forEach(item => ...)`
@@ -39,6 +78,18 @@ Submodule representing the player's inventory (equipment, bag, and pockets). Acc
 ## findAllInBag
 - Returns all bag items with the given ID (or array of IDs).
 - Exemplary usage: `mod.game.inventory.findAllInBag(CONSUMABLE_ID).forEach(item => ...)`
+
+## findAllInPocket
+- Returns all items with the given ID (or array of IDs) in the given pocket.
+- Exemplary usage: `mod.game.inventory.findAllInPocket(1, CONSUMABLE_ID).forEach(item => ...)`
+
+## findAllInPockets
+- Returns all items with the given ID (or array of IDs) in all pockets combined.
+- Exemplary usage: `mod.game.inventory.findAllInPockets(CONSUMABLE_ID).forEach(item => ...)`
+
+## findAllInBagOrPockets
+- Returns all items with the given ID (or array of IDs) in the bag and all pockets combined.
+- Exemplary usage: `mod.game.inventory.findAllInBagOrPockets(CONSUMABLE_ID).forEach(item => ...)`
 
 # Attributes
 Each of the following attributes can be accessed through, for example, `mod.game.inventory.money`.
