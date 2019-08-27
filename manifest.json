@@ -2,7 +2,7 @@
     "files": {
         "index.js": "2c0078debed21646d100b23985408a15a5132ed50e6cebcb0557e9f9c0bf1ce0",
         "module.json": "6f969d093fa5e024757824bd2814073378be4ebfdf41dfdfbd50db34f285fcc1",
-        "lib/me.js": "82eb096077c0d4463639dd1c195c97d275f3443181c32e2f69e6291adb47d6a2",
+        "lib/me.js": "ee6701df59a9ffeff4a3dfd1784845dac1e8a728f16f17fc6f1e6d423a407eeb",
         "lib/contract.js": "d76fb9cf25644e9aca0d2484ad3f9687715fb8810269eaa52f59236b8c1e12ed",
         "lib/inventory.js": "43aebd4331606f6f9e739089668864c6309b492c4a7a2b7224c70cf1ed66ffce"
     },
@@ -20,7 +20,7 @@
         "S_EXIT": "raw",
         "S_USER_CHANGE_NAME": 1,
         "S_USER_LEVELUP": 2,
-        "S_USER_STATUS": 2,
+        "S_USER_STATUS": 3,
         "S_REQUEST_CONTRACT": 1,
         "S_ACCEPT_CONTRACT": "raw",
         "S_REJECT_CONTRACT": "raw",
