@@ -82,12 +82,12 @@ class TeraGameState extends EventEmitter {
             this.accountId = event.accountId;
         });
 
-        this.installHook('S_GET_USER_LIST', 'raw', () => { this.setState(GameStates.CHARACTER_LOBBY); });
-        this.installHook('S_RETURN_TO_LOBBY', 'raw', () => { this.setState(GameStates.CHARACTER_LOBBY); });
-        this.installHook('S_LOGIN', 'raw', () => { this.setLoadingScreen(true); this.setState(GameStates.INGAME); });
-        this.installHook('S_LOAD_TOPO', 'raw', () => { this.setLoadingScreen(true); });
-        this.installHook('S_SPAWN_ME', 'raw', () => { this.setLoadingScreen(false); });
-        this.installHook('S_EXIT', 'raw', () => { this.setState(GameStates.INVALID); });
+        this.installHook('S_GET_USER_LIST', 'event', () => { this.setState(GameStates.CHARACTER_LOBBY); });
+        this.installHook('S_RETURN_TO_LOBBY', 'event', () => { this.setState(GameStates.CHARACTER_LOBBY); });
+        this.installHook('S_LOGIN', 'event', () => { this.setLoadingScreen(true); this.setState(GameStates.INGAME); });
+        this.installHook('S_LOAD_TOPO', 'event', () => { this.setLoadingScreen(true); });
+        this.installHook('S_SPAWN_ME', 'event', () => { this.setLoadingScreen(false); });
+        this.installHook('S_EXIT', 'event', () => { this.setState(GameStates.INVALID); });
     }
 
     setState(state) {

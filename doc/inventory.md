@@ -94,20 +94,29 @@ Submodule representing the player's inventory (equipment, bag, and pockets). Acc
 # Attributes
 Each of the following attributes can be accessed through, for example, `mod.game.inventory.money`.
 - `dbids`: DatabaseID -> Item object containing all items (equipment, bag, pockets)
-- `items`: array containing all items in equipment and bag combined
+- `items`: array containing all items in equipment, the bag, and all pockets combined
 - `pocketCount`: total number of unlocked pockets + 1 (as the bag is regarded to as pocket 0)
 - `pockets`: array (index 0 = bag; index 1 = first pocket; etc.) of objects with `size` (number of slots), `lootPriority` (see `S_ITEMLIST` definition) and `slots` (slot number -> item object; contains only used slots)
 - `equipment`: object with `size` (number of slots) and `slots` (slot number -> item object; contains only used slots)
 - `equipmentItems`: array containing all equipped items
 - `bag`: redirects to `pockets[0]`
 - `bagItems`: array containing all items in bag
+- `pocketItems`: array (index 0 = bag; index 1 = first pocket; etc.) of arrays containing all items in each pocket
+- `bagOrPocketItems`: array containing all items in the bag and all pockets combined
 - `equipmentItemLevel`: Currently equipped item level
-- `totalItemLevel`: Maximum possible item level across all items in equipment and bag
+- `totalItemLevel`: Maximum possible item level across all items in equipment, the bag, and all pockets
 - `money`: Total money
 - `tcat`: Total TCat
-- `equipmentPassivities`: array containing all passivity IDs of the currently active passivity sets of all equipped items (e.g. weapon rolls). Duplicates possible.
+- `equipmentPassivities`: array containing all passivity IDs of the currently active dynamic passivities of all equipped items (e.g. weapon rolls or infused passives). Duplicates possible.
 - `equipmentCrystals`: array containing all item IDs of the crystals in all equipped items. Duplicates possible.
 - `weaponEquipped`: Indicates whether or not a weapon is equipped
+
+# The `item` object
+Item objects returned by functions such as `findInBag`, or contained in arrays/objects such as `items` and `dbids`, have the following attributes:
+- All attributes of the `items` array in the latest version of `S_ITEMLIST` (see [tera-data](https://github.com/tera-toolbox/tera-data/blob/master/protocol/))
+- `container`: ID of the container
+- `pocket`: ID of the pocket within the container
+- `data`: Link to the [corresponding game data queried from the DataCenter file](data.md#items)
 
 # Events
 ## update
