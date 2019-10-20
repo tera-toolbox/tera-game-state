@@ -1,6 +1,7 @@
 # me
 Submodule representing the player's currently played character while ingame. Accessible through `mod.game.me`.
-** This submodule is loaded by default! **
+
+**This submodule is loaded by default!**
 
 # Functions
 ## is
