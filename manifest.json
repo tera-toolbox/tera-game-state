@@ -4,7 +4,7 @@
         "module.json": "6f969d093fa5e024757824bd2814073378be4ebfdf41dfdfbd50db34f285fcc1",
         "lib/me.js": "1d449ce3808cae2b514ac507ef6e84e168baa479c04e0dbec5c47cb01351beb4",
         "lib/contract.js": "297bbff8c8887754f6e50a4fdffb2c1444aa9a7d8f5ef02941d43ad374117b58",
-        "lib/inventory.js": "649e4d3f448500c8c9dc7d49948cd0a5ec17f8b5cbeab1aa63ca1b93c008ba5b"
+        "lib/inventory.js": "812d51305f0bee923cec6da210becf44a4af684a62c47d6aeaea499867b45a61"
     },
     "defs": {
         "C_LOGIN_ARBITER": 2,
@@ -26,6 +26,6 @@
         "S_REJECT_CONTRACT": "event",
         "S_CANCEL_CONTRACT": "event",
         "S_INVEN_USERDATA": [1, 2],
-        "S_ITEMLIST": [1, 2]
+        "S_ITEMLIST": [2, 3]
     }
 }
