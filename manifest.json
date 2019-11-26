@@ -1,9 +1,10 @@
 {
     "files": {
-        "index.js": "527db5686384eddb8df0e48d295460d44190d9f45b7edc8900686c7fd7d67122",
-        "module.json": "6f969d093fa5e024757824bd2814073378be4ebfdf41dfdfbd50db34f285fcc1",
+		"index.js": "7dc29d6ac31a2593f7e3cfa4afa576a5e188262bea7231a0c76f589358a99f5d",
+        "module.json": "4f61176eb40b7f496ad9464e941ca9c3c1764f04dbd6ca283f327715ed5fdbff",
         "lib/me.js": "1d449ce3808cae2b514ac507ef6e84e168baa479c04e0dbec5c47cb01351beb4",
-        "lib/contract.js": "297bbff8c8887754f6e50a4fdffb2c1444aa9a7d8f5ef02941d43ad374117b58",
+        "lib/sysmsg.js": "9bb9e8c1837a6cf09814a3c65c869cb8c0e1a42a0bd748942634814f8310823e",
+		"lib/contract.js": "297bbff8c8887754f6e50a4fdffb2c1444aa9a7d8f5ef02941d43ad374117b58",
         "lib/inventory.js": "812d51305f0bee923cec6da210becf44a4af684a62c47d6aeaea499867b45a61"
     },
     "defs": {
@@ -26,6 +27,7 @@
         "S_REJECT_CONTRACT": "event",
         "S_CANCEL_CONTRACT": "event",
         "S_INVEN_USERDATA": [1, 2],
-        "S_ITEMLIST": [2, 3]
+        "S_ITEMLIST": [2, 3],
+		"S_SYSTEM_MESSAGE": 1
     }
 }
