@@ -25,6 +25,7 @@ class TeraGameState extends EventEmitter {
         // Now initialize default submodules
         this.installHooks();
         this.initialize('me');
+        this.initialize('sysmsg');
     }
 
     destructor() {

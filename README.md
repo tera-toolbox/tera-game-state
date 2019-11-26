@@ -3,6 +3,7 @@
 
 # Documentation
 - Submodule `me`: [here](doc/me.md)
+- Submodule `sysmsg`: [here](doc/sysmsg.md)
 - Submodule `contract`: [here](doc/contract.md)
 - Submodule `inventory`: [here](doc/inventory.md)
 
