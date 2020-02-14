@@ -2,16 +2,16 @@
     "files": {
         "index.js": "527db5686384eddb8df0e48d295460d44190d9f45b7edc8900686c7fd7d67122",
         "module.json": "6f969d093fa5e024757824bd2814073378be4ebfdf41dfdfbd50db34f285fcc1",
-        "lib/me.js": "1d449ce3808cae2b514ac507ef6e84e168baa479c04e0dbec5c47cb01351beb4",
+        "lib/me.js": "818c175fc89a54c844d04a3d532b557a67e7e280c03076efebdb2a7bb8eb5f5d",
         "lib/contract.js": "297bbff8c8887754f6e50a4fdffb2c1444aa9a7d8f5ef02941d43ad374117b58",
-        "lib/inventory.js": "812d51305f0bee923cec6da210becf44a4af684a62c47d6aeaea499867b45a61"
+        "lib/inventory.js": "2a6929ce733e687957a2166de9ac51e48c13528372c4ad9660d0c71af47e5ca7"
     },
     "defs": {
         "C_LOGIN_ARBITER": 2,
         "S_LOGIN_ACCOUNT_INFO": 2,
         "S_GET_USER_LIST": "event",
         "S_RETURN_TO_LOBBY": "event",
-        "S_LOGIN": ["event", 13, 14],
+        "S_LOGIN": ["event", 14],
         "S_LOAD_TOPO": ["event", 3],
         "S_SPAWN_ME": ["event", 3],
         "S_CREATURE_LIFE": 3,
@@ -25,7 +25,7 @@
         "S_ACCEPT_CONTRACT": "event",
         "S_REJECT_CONTRACT": "event",
         "S_CANCEL_CONTRACT": "event",
-        "S_INVEN_USERDATA": [1, 2],
-        "S_ITEMLIST": [2, 3]
+        "S_INVEN_USERDATA": 2,
+        "S_ITEMLIST": 3
     }
 }
