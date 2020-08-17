@@ -10,5 +10,5 @@ Submodule tracking current player party
 
 ## inParty
 - Returns true/false
-- Exemplary usage: `mod.game.talents.inParty()`
+- Exemplary usage: `mod.game.party.inParty()`
 
