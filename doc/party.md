@@ -30,6 +30,6 @@ Submodule tracking current player party
 
 ## party_left
 - Emitted when S_LEAVE_PARTY received
-- Exemplary usage: `mod.game.party.on('party_member_leave', () => { ... })`
+- Exemplary usage: `mod.game.party.on('party_left', () => { ... })`
 - Parameters: not included
 
