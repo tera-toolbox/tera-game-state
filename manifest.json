@@ -14,8 +14,8 @@
 		"doc/talents.md": "659586de327eea7ed7d669dfb629304c0b118bccf41f4c09b938a94a7914f01b",
 		"doc/me.md": "96b69bc896a0b23af0bd073f902454bdec507e978b08c90aa54b9a80185e792d",
 		"README.md": "d1afb5b1788c98b762ecc2cc29db922a346e29c6bc62e57769dfbc9cb6aff683",
-		"doc/party.md": "9a6758b33f1bf45cfac8ea15932525e418e14634b144aefee2fb7d08f9142e7f",
-		"lib/party.js": "af3f587b5191923a5acbbda67e5253fa2147ebc3900971eca9c3ea9fbc3dc12c"
+		"doc/party.md": "5b223a15196cce8960e9ad373fd98260644d472813efb6ca4f32bde0e0eddc9c",
+		"lib/party.js": "a3d1b8abab77a679938259a7fd0a8e4c44d77dc05c22b97df7c9e07078f3d153"
 	},
 	"defs": {
 		"C_LOGIN_ARBITER": 2,
