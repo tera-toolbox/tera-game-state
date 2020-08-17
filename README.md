@@ -7,6 +7,7 @@
 - Submodule `inventory`: [here](doc/inventory.md)
 - Submodule `talents`: [here](doc/talents.md)
 - Submodule `glyphs`: [here](doc/glyphs.md)
+- Submodule `party`: [here](doc/party.md)
 
 # Requesting submodules
 To reduce overhead, most submodules need to be explicitly requested by a module using them (during initialization, recommended in the module's constructor):
