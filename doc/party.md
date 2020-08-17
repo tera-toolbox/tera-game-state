@@ -12,6 +12,10 @@ Submodule tracking current player party
 - Returns true/false
 - Exemplary usage: `mod.game.party.inParty()`
 
+## getMemberData
+- Returns { gameId..., playerId:... , serverId:..., name: ..., class: ... } if entity in party of null
+- Exemplary usage: `mod.game.party.getMemberData(<gameId>)`
+
 # Events
 ## list
 - Emitted when S_PARTY_MEMBER_LIST received AND party list WAS FIXED
