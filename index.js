@@ -25,7 +25,7 @@ class ClientMod {
             });
 
             // ItemData / StrSheet_Item
-            (await mod.queryData('/ItemData/Item/', [], true, false, ['id', 'combatItemType'])).forEach(result => {
+            (await mod.queryData('/ItemData/Item/', [], true, false, ['id', 'combatItemType', `rareGrade`])).forEach(result => {
                 this.items.set(result.attributes.id, result.attributes);
             });
             (await mod.queryData('/StrSheet_Item/String/', [], true, false)).forEach(result => {
