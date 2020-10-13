@@ -32,6 +32,11 @@ Each of the following attributes can be accessed through, for example, `mod.game
 - `inCivilUnrest`: Indicates whether the player is currently in CU.
 
 # Events
+## change_template
+- Emitted if the current player template changes (emitted once on `S_LOGIN` for all game modes, and whenever the TBA hero is switched)
+- Exemplary usage: `mod.game.me.on('change_template', (templateId, class, race, gender) => { ... })`
+- Parameters: `templateId` is the new templateId used. `class`, `race`, and `gender` indicates the new template's class, race, and gender.
+
 ## change_zone
 - Emitted if the current zone changes on `S_LOAD_TOPO`
 - Exemplary usage: `mod.game.me.on('change_zone', (zone, quick) => { ... })`

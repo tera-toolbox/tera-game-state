@@ -1,8 +1,8 @@
 {
 	"files": {
-		"index.js": "085012622ea9950ec0e03c23293a68097472d6ca7cd6a2257aaa526b3e62a14b",
+		"index.js": "7f3c5a8ead6f5e5b2ba1debc80c21e2cbee92d84056c47ce8a41e91dfdc42fc6",
 		"module.json": "66d433d3926615e39473966fa5f24b4aa65137808807cf9eeb97baaab7f6c5c9",
-		"lib/me.js": "818c175fc89a54c844d04a3d532b557a67e7e280c03076efebdb2a7bb8eb5f5d",
+		"lib/me.js": "e1e42081c47aa69b383d84aeac286a3d25ac2b230b7905a511f17e2eb3eb08c0",
 		"lib/contract.js": "297bbff8c8887754f6e50a4fdffb2c1444aa9a7d8f5ef02941d43ad374117b58",
 		"lib/glyphs.js": "0c3c5e48f39fadc6ac0189712f78d2557e18eaaae967044758cd89a42bbd59d2",
 		"lib/inventory.js": "85446f663728bb26117d0fc30f95f486fc33ff50e5e4ca60158befd0b263fd89",
@@ -12,7 +12,7 @@
 		"doc/glyphs.md": "282cd028c37e8afa28dd22bcd1d638bceb1447e60858a8a6b21fe327d874b4be",
 		"doc/inventory.md": "a9cff75b917845bbe4c1d37ea2bd6500597e30978156c066900d5115f0b5b22d",
 		"doc/talents.md": "659586de327eea7ed7d669dfb629304c0b118bccf41f4c09b938a94a7914f01b",
-		"doc/me.md": "96b69bc896a0b23af0bd073f902454bdec507e978b08c90aa54b9a80185e792d",
+		"doc/me.md": "80239e1d6d6e2afee5b0e330f476abed736e69209a77cb462fbfef227927e4e3",
 		"README.md": "d1afb5b1788c98b762ecc2cc29db922a346e29c6bc62e57769dfbc9cb6aff683",
 		"doc/party.md": "8787ba057576927924b36eaea0ff922a8266fcac8f686064bd1dfebe112bf583",
 		"lib/party.js": "10b33655b99f16a58c4e97759985db7feecb26d1bfd5d37b1ca884a3c5ee0b15"

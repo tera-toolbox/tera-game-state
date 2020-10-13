@@ -19,6 +19,13 @@ class ClientMod {
                 this.users.set(result.attributes.id, result.attributes);
             });
 
+            if (mod.majorPatchVersion >= 99) {
+                // HeroData
+                (await mod.queryData('/HeroData/Template/', [], true, false, ['id', 'class', 'race', 'gender'])).forEach(result => {
+                    this.users.set(result.attributes.id, result.attributes);
+                });
+            }
+
             // ContinentData
             (await mod.queryData('/ContinentData/Continent/', [], true, false, ['id', 'channelType'])).forEach(result => {
                 this.continents.set(result.attributes.id, result.attributes);
@@ -64,6 +71,7 @@ class NetworkMod extends EventEmitter {
         this.language = null;
         this.accountId = null;
         this.accountName = null;
+        this.isTBA = false;
         this.loadedSubmodules = {};
 
         // Make sure to load game data first
@@ -130,11 +138,16 @@ class NetworkMod extends EventEmitter {
         });
 
         this.installHook('S_GET_USER_LIST', 'event', () => { this.setState(GameStates.CHARACTER_LOBBY); });
-        this.installHook('S_RETURN_TO_LOBBY', 'event', () => { this.setState(GameStates.CHARACTER_LOBBY); });
+        this.installHook('S_RETURN_TO_LOBBY', 'event', () => { this.setState(GameStates.CHARACTER_LOBBY); this.isTBA = false; });
         this.installHook('S_LOGIN', 'event', () => { this.setLoadingScreen(true); this.setState(GameStates.INGAME); });
         this.installHook('S_LOAD_TOPO', 'event', () => { this.setLoadingScreen(true); });
         this.installHook('S_SPAWN_ME', 'event', () => { this.setLoadingScreen(false); });
         this.installHook('S_EXIT', 'event', () => { this.setState(GameStates.INVALID); });
+
+        if (this.mod.majorPatchVersion >= 99) {
+            this.installHook('S_SELECT_USER', 'event', () => { this.isTBA = false; });
+            this.installHook('S_TBA_SELECT_USER', 'event', () => { this.isTBA = true; });
+        }
     }
 
     setState(state) {
