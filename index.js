@@ -133,9 +133,10 @@ class NetworkMod extends EventEmitter {
             this.language = event.language;
             this.accountName = event.name;
         });
-        /*this.installHook('S_LOGIN_ACCOUNT_INFO', 2, event => {
+        
+        this.installHook('S_LOGIN_ACCOUNT_INFO', this.mod.majorPatchVersion >= 100 ? 3 : 2, event => {
             this.accountId = event.accountId;
-        });*/
+        });
 
         this.installHook('S_GET_USER_LIST', 'event', () => { this.setState(GameStates.CHARACTER_LOBBY); });
         this.installHook('S_RETURN_TO_LOBBY', 'event', () => { this.setState(GameStates.CHARACTER_LOBBY); this.isTBA = false; });
