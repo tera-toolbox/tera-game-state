@@ -19,7 +19,7 @@ Submodule tracking current player party
 # Events
 ## list
 - Emitted when S_PARTY_MEMBER_LIST received AND/OR modified OR party list WAS FIXED
-- Exemplary usage: `mod.game.party.on(list', (list) => { ... })`
+- Exemplary usage: `mod.game.party.on('list', (list) => { ... })`
 - Parameters: `list` is array of objects with content { gameId..., playerId:... , serverId:..., name: ..., class: ... }
 
 ## member_leave
