@@ -15,7 +15,7 @@
 		"doc/me.md": "80239e1d6d6e2afee5b0e330f476abed736e69209a77cb462fbfef227927e4e3",
 		"README.md": "d1afb5b1788c98b762ecc2cc29db922a346e29c6bc62e57769dfbc9cb6aff683",
 		"doc/party.md": "b3f2cc47d24a0965f0eeef0c09353720122738f1631a6263601f8b192c8cf2f4",
-		"lib/party.js": "7fa0581cdaac6228363c45a8320cf4b3a8954a61185c11221b9851f2fbc93455"
+		"lib/party.js": "143d33ca3e1377f9b3a005b7632d13dad7ced71bc97954470988a5ff128363e2"
 	},
 	"defs": {
 		"C_LOGIN_ARBITER": 2,
