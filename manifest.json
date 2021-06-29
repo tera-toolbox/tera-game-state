@@ -2,7 +2,7 @@
 	"files": {
 		"index.js": "dc1a20e611c4743c8eeace1c4f32c06d7f9c0c77aa0273f323719c38121cc38d",
 		"module.json": "66d433d3926615e39473966fa5f24b4aa65137808807cf9eeb97baaab7f6c5c9",
-		"lib/me.js": "2da30b26642a635e963ee8b6cad5d055f805f24d6d0d5328ad6c7a7db1695761",
+		"lib/me.js": "7da2c499b6eabf7656e96a4c96049e32ac11599e9fa980d7775cac8780e183ab",
 		"lib/contract.js": "297bbff8c8887754f6e50a4fdffb2c1444aa9a7d8f5ef02941d43ad374117b58",
 		"lib/glyphs.js": "0c3c5e48f39fadc6ac0189712f78d2557e18eaaae967044758cd89a42bbd59d2",
 		"lib/inventory.js": "2836a4b350ee7a28a3b6edf2049880fb43cb2faf36c00dea6cbd6418fc09dada",
